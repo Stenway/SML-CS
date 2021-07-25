@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectGuid>{27CD6056-C5C0-43BA-8AB9-11F992394501}</ProjectGuid>
+    <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Stenway.Sml</RootNamespace>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <NoWin32Manifest>False</NoWin32Manifest>
+    <SignAssembly>False</SignAssembly>
+    <DelaySign>False</DelaySign>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <IntermediateOutputPath>.\Bin\$(Configuration)\</IntermediateOutputPath>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>False</RunCodeAnalysis>
+    <OutputPath>.\Bin</OutputPath>
+    <BaseIntermediateOutputPath>.\Bin\$(Configuration)\</BaseIntermediateOutputPath>
+    <AssemblyName>Stenway.Sml-0.1.0-alpha1</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <BaseAddress>4194304</BaseAddress>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <StartAction>Project</StartAction>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+    <StartAction>Project</StartAction>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="SmlAttribute.cs" />
+    <Compile Include="SmlDocument.cs" />
+    <Compile Include="SmlElement.cs" />
+    <Compile Include="SmlEmptyNode.cs" />
+    <Compile Include="SmlException.cs" />
+    <Compile Include="SmlNamedNode.cs" />
+    <Compile Include="SmlNode.cs" />
+    <Compile Include="SmlParser.cs" />
+    <Compile Include="SmlParserException.cs" />
+    <Compile Include="SmlSerializer.cs" />
+    <Compile Include="WsvDocumentLineIterator.cs" />
+    <Compile Include="WsvJaggedArrayLineIterator.cs" />
+    <Compile Include="IWsvLineIterator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Stenway.ReliableTxt\Stenway.ReliableTxt.csproj">
+      <Project>{d4e41635-4d2a-477d-ad3f-da3ea4576ae6}</Project>
+      <Name>Stenway.ReliableTxt</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Stenway.Wsv\Stenway.Wsv.csproj">
+      <Project>{5ca8b328-a004-4563-8044-8b93e3d6b2b3}</Project>
+      <Name>Stenway.Wsv</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
